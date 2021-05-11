@@ -9,7 +9,7 @@ export default class Step{
         const step = new Step(json.id);
         step.people = json.people;
         step.total = json.total;
-        step.date = step.date;
+        step.date = json.date;
 
         return step;
     }
