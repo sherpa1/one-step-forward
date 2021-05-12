@@ -6,7 +6,6 @@ import "./PeopleMaster.css";
 
 import PeoplePreview from '../people-preview/PeoplePreview';
 
-
 /*
 const SEDENTARY = "sedentary";
 const LOW_ACTIVE = "low active";
@@ -54,9 +53,11 @@ export default class PeopleMaster extends React.Component{
 
     render(){
         return(
-            <section>
+            <section className="PeopleMaster">
             <h1>People</h1>
+            <div>
                 {this.people_list()}
+            </div>
             </section>
         );
     }

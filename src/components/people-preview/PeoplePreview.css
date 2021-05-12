@@ -1,0 +1,28 @@
+article.PeoplePreview a{
+    display:flex;
+    width: 100%;
+    height:100%;
+}
+
+article.PeoplePreview{
+    background-color:#1f1f1f;
+    border-radius: 0.5em;
+    width:10em;
+    height:5em;
+    display: block;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin:1em;
+    border-top:solid 1px #26abba;
+    padding: 0.5em;
+}
+
+article.PeoplePreview:hover h1{
+    color:#cb5950;
+}
+
+article.PeoplePreview:hover{
+    background-color: #f39c14;
+}

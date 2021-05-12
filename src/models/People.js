@@ -1,5 +1,6 @@
 import Step from './Step';
-//import moment from 'moment';
+
+import avatars from '../misc/avatars';
 
 export default class People{
 
@@ -25,6 +26,8 @@ export default class People{
             });
         }
 
+        people.avatar = avatars[Math.floor(Math.random()*(avatars.length-1))];
+
         //people.steps.sort((a,b)=>a.date-b.date);
         
         return people;
@@ -33,4 +36,9 @@ export default class People{
     fullname(){
         return this.firstname+" "+this.lastname;
     }
+
+    link(){
+        return "/"+this.id;
+    }
+
 }

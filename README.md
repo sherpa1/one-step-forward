@@ -1,11 +1,18 @@
 # ONE STEP FORWARD FAKER
 
 Client web réalisé avec React.js pour le projet "One Step Forward" (donées fictives E-Santé & IoT)
+---
+## Crédits
 
-Crédits : 
+- Chart.js (https://www.chartjs.org/)
 
-Chart.js (https://www.chartjs.org/)
+- React Chartjs 2
 
+https://github.com/reactchartjs/react-chartjs-2
+
+https://reactchartjs.github.io/react-chartjs-2/#/
+
+- Icônes : Smashicons (https://www.flaticon.com)
 
 ---
 
