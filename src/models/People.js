@@ -1,7 +1,5 @@
 import Step from './Step';
 
-import avatars from '../misc/avatars';
-
 export default class People{
 
     constructor(id){
@@ -17,7 +15,8 @@ export default class People{
         people.height = json.height;
         people.weight = json.weight;
         people.bmi = json.bmi;
-        
+        people.avatar = json.avatar;
+
         people.steps = [];
 
         if(json.steps){
@@ -25,8 +24,6 @@ export default class People{
                 people.steps.push(Step.fromJSON(step));
             });
         }
-
-        people.avatar = avatars[Math.floor(Math.random()*(avatars.length-1))];
 
         //people.steps.sort((a,b)=>a.date-b.date);
         
