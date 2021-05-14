@@ -11,6 +11,11 @@
     font-weight: 600;
 }
 
+.PeopleDetails .value.green{
+    color: greenyellow;
+    font-weight: 600;
+}
+
     .PeopleDetails section{
     display: flex;
     flex-wrap: wrap;
@@ -24,3 +29,6 @@
     width: 40%;
 }
 
+.PeopleDetails li{
+    margin-top:1em;
+}

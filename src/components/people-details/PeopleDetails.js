@@ -85,9 +85,20 @@ class PeopleDetails extends React.Component {
 
     }
 
+    get_class_according_to_steps_number = (steps_number)=>{
+
+            if (steps_number>=10000)
+                return 'value green';
+
+            else return 'value';
+        
+        
+    }
 
     steps_list = () => {
-        return this.state.people.steps.sort((a, b) => new Date(a.date).getDate() - new Date(b.date).getDate()).map(step => <li><date>{step.date}</date> : <span className="value">{step.total} steps</span></li>)
+
+        const steps_ordered_by_date = this.state.people.steps.sort((a, b) => new Date(a.date).getDate() - new Date(b.date).getDate());
+        return steps_ordered_by_date.map(step => <li><date>{step.date}</date> : <span className={this.get_class_according_to_steps_number(step.total)} >{step.total} steps</span></li>);
     }
 
     details = () => {
@@ -105,7 +116,7 @@ class PeopleDetails extends React.Component {
                         <p><label>Gender : </label><span class="value">{this.state.people.gender}</span></p>
                         <p><label>Birthday : </label><span class="value">{this.state.people.birthday}</span></p>
                         <p><label>Height : </label><span class="value">{this.state.people.height / 100}m</span></p>
-                        <p><label>Weight : </label><span class="value">{this.state.people.height}kg</span></p>
+                        <p><label>Weight : </label><span class="value">{this.state.people.weight}kg</span></p>
                         <p><label>BMI (Body Mass Index)  : </label><span class="value">{this.state.people.bmi}</span></p>
                         <p><label>Activity average  : </label><span class="value">{this.state.people.activity_average()} steps by day</span></p>
                         <p><label>Activity level  : </label><span class="value">{this.state.people.activity_level()}</span></p>
