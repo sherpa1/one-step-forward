@@ -1,6 +1,24 @@
 # ONE STEP FORWARD FAKER
 
 Client web réalisé avec React.js pour le projet "One Step Forward" (donées fictives E-Santé & IoT)
+
+---
+## Commandes utiles
+
+### Installation des dépendances NPM
+
+```
+yarn
+```
+
+### Démarrer l'application
+
+__Important : avant de démarrer l'application, il est nécessaire de démarrer l'API (Strapi)__
+
+```
+yarn start
+```
+
 ---
 ## Crédits
 

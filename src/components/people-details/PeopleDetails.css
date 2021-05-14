@@ -5,3 +5,22 @@
 .PeopleDetails img{
     max-width: 10em;
 }
+
+.PeopleDetails .value{
+    color:#f39c14;
+    font-weight: 600;
+}
+
+    .PeopleDetails section{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.PeopleDetails section div{
+    padding:2em;
+    margin:1em;
+    border-radius: 0.5em;
+    background-color: #222;
+    width: 40%;
+}
+

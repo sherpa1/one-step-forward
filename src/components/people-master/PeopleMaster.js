@@ -54,7 +54,7 @@ export default class PeopleMaster extends React.Component{
     render(){
         return(
             <section className="PeopleMaster">
-            <h1>People</h1>
+            <h1>Fake People</h1>
             <div>
                 {this.people_list()}
             </div>

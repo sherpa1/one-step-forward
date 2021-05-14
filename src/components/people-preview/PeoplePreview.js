@@ -8,7 +8,7 @@ export default class PeoplePreview extends React.Component {
         return (
             <article className="PeoplePreview">
                 <Link to={`${this.props.people.link()}`}><h1>{this.props.people.fullname()}</h1>
-                <img src={`/images/avatars/${this.props.people.avatar}`}/>
+                <img alt="avatar" src={`/images/avatars/${this.props.people.avatar}`}/>
                 </Link>
             </article>
         );
