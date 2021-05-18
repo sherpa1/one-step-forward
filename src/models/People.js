@@ -31,8 +31,6 @@ export default class People {
             });
         }
 
-        //people.steps.sort((a,b)=>a.date-b.date);
-
         return people;
     }
 
@@ -52,11 +50,9 @@ export default class People {
         });
 
         return Math.round(sum/this.steps.length);
-
     }
 
     activity_level() {
-
         const steps_by_day = this.activity_average();
 
         if(steps_by_day<5000){

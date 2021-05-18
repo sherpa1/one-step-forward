@@ -12,8 +12,6 @@ const axios_instance = axios.create({
     timeout: 1000
 });
 
-
-
 const options = {
     scales: {
         yAxes: [
@@ -33,14 +31,13 @@ class PeopleDetails extends React.Component {
         this.canvasRef = React.createRef();
         this.state = {
             people: null,
-
         }
     };
 
-
     get_people = async () => {
         let result;
-        let { id } = this.props.match.params;//get people id from url param         
+        
+        let { id } = this.props.match.params;//get people id from url param (React Dom Router)
 
         try {
             //get data from API
@@ -51,11 +48,11 @@ class PeopleDetails extends React.Component {
         } catch (error) {
             console.error(error);
         }
-
-
     }
 
+    //each time component is added to DOM (cf. React Lifecycle)
     componentDidMount = async () => {
+
         await this.get_people();
 
         const labels = this.state.people.steps.map(step => step.date);
@@ -85,20 +82,16 @@ class PeopleDetails extends React.Component {
 
     }
 
-    get_class_according_to_steps_number = (steps_number)=>{
+    get_css_class_according_to_steps_number = (steps_number)=>{
+        if (steps_number>=10000)
+            return 'value green';
 
-            if (steps_number>=10000)
-                return 'value green';
-
-            else return 'value';
-        
-        
+        else return 'value';
     }
 
-    steps_list = () => {
-
+    render_steps_list = () => {
         const steps_ordered_by_date = this.state.people.steps.sort((a, b) => new Date(a.date).getDate() - new Date(b.date).getDate());
-        return steps_ordered_by_date.map(step => <li><date>{step.date}</date> : <span className={this.get_class_according_to_steps_number(step.total)} >{step.total} steps</span></li>);
+        return steps_ordered_by_date.map(step => <li key={step.id}><date>{step.date}</date> : <span className={this.get_css_class_according_to_steps_number(step.total)} >{step.total} steps</span></li>);
     }
 
     details = () => {
@@ -124,7 +117,7 @@ class PeopleDetails extends React.Component {
                     <div className="col">
                     <h2>Steps over last 10 days</h2>
                         <ul>
-                            {this.steps_list()}
+                            {this.render_steps_list()}
                         </ul>
                     </div>
                     <div className="col">
@@ -149,4 +142,4 @@ class PeopleDetails extends React.Component {
     }
 }
 
-export default withRouter(PeopleDetails);
+export default withRouter(PeopleDetails);//used by React Dom Router to get params from URL (https://reactrouter.com/web/api/withRouter)

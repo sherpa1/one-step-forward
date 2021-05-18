@@ -14,6 +14,7 @@ export default class App extends React.Component {
   render() {
     return (
         <div className="App">
+
       <Router>
       <header>
       <Link to="/"><h1>One step forward</h1></Link>
@@ -22,15 +23,19 @@ export default class App extends React.Component {
       </header>
 
           <Switch>
+          
             <Route path="/:id">
               <PeopleDetails />
             </Route>
+
             <Route path="/">
               <PeopleMaster />
             </Route>
+          
           </Switch>
 
       </Router>
+
       <footer>
       <p>
         Alexandre Leroux - Enseignant à l'Université de Lorraine - IUT Nancy Charlemagne (LP CIASIE) - IDMC (Master Sciences Cognitives)
